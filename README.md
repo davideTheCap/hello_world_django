@@ -25,3 +25,21 @@ and simply deactivate it in your terminal with
 `deactivate`
 
 ## Create Helloworld
+
+With an active virtual environment run:
+
+`pip install Django`
+
+create then the project
+
+`django-admin startproject hello_world_project`
+
+and is ready to be installed and run the server
+
+```
+cd hello_world_project
+python manage.py migrate
+python manage.py runserver
+```
+
+Inspired by [Django central](https://djangocentral.com/create-a-hello-world-django-application/) and [Virtual Env](https://djangocentral.com/how-to-a-create-virtual-environment-for-python/)
