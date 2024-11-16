@@ -43,3 +43,17 @@ python manage.py runserver
 ```
 
 Inspired by [Django central](https://djangocentral.com/create-a-hello-world-django-application/) and [Virtual Env](https://djangocentral.com/how-to-a-create-virtual-environment-for-python/)
+
+## How to create a migration
+
+Create model for the db table in `models.py` then run
+
+`python manage.py makemigrations my_app`
+
+To analyse the sql that would run, launch:
+
+`python manage.py sqlmigrate my_app 0001`
+
+To effectively apply the migration:
+
+`python manage.py migrate`
