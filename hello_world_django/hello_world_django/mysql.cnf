@@ -1,5 +1,7 @@
 [client]
-database = go2rail-db
+database = go2rail
 user = go2rail
 password = password
+host=127.0.0.1
+port=3304
 default-character-set = utf8

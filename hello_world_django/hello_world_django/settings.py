@@ -77,13 +77,9 @@ WSGI_APPLICATION = 'hello_world_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'go2rail',
-        'USER': 'go2rail',
-        'PASSWORD': 'password',
-        'HOST':'127.0.0.1',
-        'PORT':'3304',
         'OPTIONS': {
             "init_command": "SET default_storage_engine=INNODB",
+            "read_default_file": "./hello_world_django/mysql.cnf",
         },
         # configuration for in-memory db
         # 'NAME': ':memory:',
