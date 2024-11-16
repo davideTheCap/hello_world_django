@@ -1,0 +1,13 @@
+# to compile and run with
+# docker-compose up --build -d
+services:
+  go2rail-db:
+    image: mysql:8.0.37
+    container_name: go2rail-db
+    ports:
+      - "3304:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: go2rail
+      MYSQL_USER: go2rail
+      MYSQL_PASSWORD: password
