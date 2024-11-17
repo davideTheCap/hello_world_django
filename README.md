@@ -57,3 +57,19 @@ To analyse the sql that would run, launch:
 To effectively apply the migration:
 
 `python manage.py migrate`
+
+## Migrations with Pewee as ORM
+
+Install Pewee and pewee migrations
+
+`pip install peewee-migrations`
+
+`pem init` to let Pewee create the migrations.json file
+
+`pem add my_app.models.Entity` to add the entity to the migration
+
+`pem watch` should notify if everything went well and pewee is able to generate the migration
+
+`pem show` shows which migration is going to run
+
+`pem migrate` to run the migration to the db
