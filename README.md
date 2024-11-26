@@ -73,3 +73,11 @@ Install Pewee and pewee migrations
 `pem show` shows which migration is going to run
 
 `pem migrate` to run the migration to the db
+
+## Start with Gunicorn
+
+After having installed gunicorn
+`python -m pip install gunicorn`
+
+It's possible to run the same webserver through gunicorn via
+`gunicorn hello_world_django.wsgi`
