@@ -21,5 +21,15 @@ from my_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # configured the url
-    path('my_app/', include("my_app.urls"))
+    path('my_app/', include("my_app.urls")),
+    path("", views.index, name="index"),
+    path("travel/request", views.TravelRequestView.as_view(), name="travel_request"),
+    # path("memorandum/request", views.MemorandumRequestView.as_view(), name="memorandum_request"),
+    # path("memorandum/confirm", views.MemorandumConfirmationView.as_view(), name="memorandum_request"),
+    # path("email/verify", views.VerifyEmailView.as_view(), name="verify_email"),
+    # path("bot/otp/generate", views.BotOtpGenerationView.as_view(), name="generate_otp"),
+    # path("bot/otp/verify", views.BotOtpVerificationView.as_view(), name="verify_otp"),
+    # path("bot/user/confirmed", views.BotCheckUserConfirmedView.as_view(), name="check_confirmed_user"),
+    # path("travel/create", views.CreateTravelView.as_view(), name="create_travel"),
+    # path("group/create", views.CreateTravelGroupView.as_view(), name="create_group"),
 ]
