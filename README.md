@@ -32,19 +32,19 @@ With an active virtual environment run:
 
 create then the project
 
-`django-admin startproject pewee`
+`django-admin startproject hello_world`
 
 and is ready to be installed and run the server
 
 ```
-cd pewee
+cd hello_world
 python manage.py migrate
 python manage.py runserver
 ```
 
 Lastly create an app inside the project
 
-` python manage.py startapp pewee_app`
+` python manage.py startapp my_app`
 
 Inspired by [Django central](https://djangocentral.com/create-a-hello-world-django-application/) and [Virtual Env](https://djangocentral.com/how-to-a-create-virtual-environment-for-python/)
 
