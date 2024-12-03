@@ -31,3 +31,16 @@ def create_or_update(model_class, unique_fields, data):
         return instance
     except IntegrityError as e:
         raise ValueError(f"Error creating or updating {model_class.__name__}: {e}")
+
+def find_by_id(model_class, pk):
+    """
+    Retrieve a record by its primary key.
+
+    :param model_class: The Peewee model class.
+    :param pk: The primary key value.
+    :return: The model instance or None if not found.
+    """
+    try:
+        return model_class.get_by_id(pk)
+    except DoesNotExist:
+        return None

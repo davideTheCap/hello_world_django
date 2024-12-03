@@ -1,6 +1,6 @@
 from peewee import *
 
-from my_app.db_interface import create_or_update
+from my_app.db_interface import *
 from playhouse.shortcuts import model_to_dict
 
 db = SqliteDatabase('people.db')
@@ -84,7 +84,14 @@ query = (Pet
 # Kitty Bob
 # Mittens Jr Herb
 
-
+# Create or Update
 person_data = {'name': 'Gino', 'birthday': '22/09/1995'}
 person = create_or_update(Person, [], person_data)
 print(person)
+
+# Find by Id
+person_found = find_by_id(Person, 1)
+if person_found:
+    print(f"Person found: {person_found.name}, {person_found.birthday}")
+else:
+    print("Person not found.")
