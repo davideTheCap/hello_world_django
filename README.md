@@ -42,6 +42,10 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+Lastly create an app inside the project
+
+` python manage.py startapp pewee`
+
 Inspired by [Django central](https://djangocentral.com/create-a-hello-world-django-application/) and [Virtual Env](https://djangocentral.com/how-to-a-create-virtual-environment-for-python/)
 
 ## How to create a migration
