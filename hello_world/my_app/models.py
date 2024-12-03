@@ -1,5 +1,8 @@
 from peewee import *
 
+from my_app.db_interface import create_or_update
+from playhouse.shortcuts import model_to_dict
+
 db = SqliteDatabase('people.db')
 
 
@@ -52,8 +55,8 @@ grandma = Person.select().where(Person.name == 'Grandma L.').get()
 grandma = Person.get(Person.name == 'Grandma L.')
 
 
-for person in Person.select():
-    print(person.name)
+# for person in Person.select():
+#     print(person.name)
 
 # prints:
 # Bob
@@ -62,8 +65,8 @@ for person in Person.select():
 
 
 query = Pet.select().where(Pet.animal_type == 'cat')
-for pet in query:
-    print(pet.name, pet.owner.name)
+# for pet in query:
+#     print(pet.name, pet.owner.name)
 
 # prints:
 # Kitty Bob
@@ -74,9 +77,14 @@ query = (Pet
          .join(Person)
          .where(Pet.animal_type == 'cat'))
 
-for pet in query:
-    print(pet.name, pet.owner.name)
+# for pet in query:
+#     print(pet.name, pet.owner.name)
 
 # prints:
 # Kitty Bob
 # Mittens Jr Herb
+
+
+person_data = {'name': 'Gino', 'birthday': '22/09/1995'}
+person = create_or_update(Person, [], person_data)
+print(person)
