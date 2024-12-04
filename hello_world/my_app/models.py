@@ -95,3 +95,8 @@ if person_found:
     print(f"Person found: {person_found.name}, {person_found.birthday}")
 else:
     print("Person not found.")
+
+# Find all
+persons = find_all(Person)
+for person in persons:
+    print(person.name, person.birthday)
