@@ -1,10 +1,28 @@
-class Person(object):
+from peewee import CharField, IntegerField
 
-    # Constructor
-    def __init__(self, name: str, id: int):
-        self.name = name
-        self.id = id
+from .base_models import BaseModel
+
+
+class Person(BaseModel):
+    name = CharField()
+    id = IntegerField()
+
+    class Meta:
+        table_name = "product"
 
     # Display method inside the class
-    def Display(self):
+    def display(self):
         print(self.name, self.id)
+
+
+p = Person(name="zio", id=3)
+p.display()
+
+# person_repo = PersonRepository()
+# person_repo.add(Person("John", 1))
+# person_repo.add(Person("Bob", 2))
+# print("model")
+#
+# employees = person_repo.all()
+# for employee in employees:
+#     print(employee.name)

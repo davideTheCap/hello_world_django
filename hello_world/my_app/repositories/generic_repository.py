@@ -14,6 +14,7 @@ T = TypeVar('T')
 
 class GenericRepository(Generic[T]):
     def __init__(self):
+        print("generic repo")
         self.items: List[T] = []
 
     def add(self, item: T) -> None:
