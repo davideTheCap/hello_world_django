@@ -1,27 +1,32 @@
-# Define type variables
 from typing import Generic, List, Optional
+
+from peewee import DoesNotExist
 
 from my_app.models.T import T
 
 
 class GenericRepository(Generic[T]):
-    def __init__(self):
-        self.items: List[T] = []
+    def __init__(self, model: T):
+        self.model = model
 
-    def add(self, item: T) -> None:
-        self.items.append(item)
+    def create(self, **kwargs) -> T:
+        return self.model.create(**kwargs)
 
-    def get(self, id: int) -> Optional[T]:
-        return next((item for item in self.items if getattr(item, 'id', None) == id), None)
+    def get_by_id(self, id: int) -> Optional[T]:
+        try:
+            return self.model.get_by_id(id)
+        except DoesNotExist:
+            return None
 
-    def update(self, item: T) -> None:
-        for i, existing_item in enumerate(self.items):
-            if getattr(existing_item, 'id', None) == getattr(item, 'id', None):
-                self.items[i] = item
-                break
+    def update(self, instance: T, **kwargs) -> bool:
+        query = self.model.update(**kwargs).where(self.model.id == instance.id)
+        return query.execute() > 0
 
-    def delete(self, id: int) -> None:
-        self.items = [item for item in self.items if getattr(item, 'id', None) != id]
+    def delete(self, instance: T) -> bool:
+        return instance.delete_instance() > 0
 
     def all(self) -> List[T]:
-        return self.items
+        return list(self.model.select())
+
+    def filter(self, **kwargs) -> List[T]:
+        return list(self.model.filter(**kwargs))
