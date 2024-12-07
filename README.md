@@ -46,7 +46,8 @@ Lastly create an app inside the project
 
 ` python manage.py startapp my_app`
 
-Inspired by [Django central](https://djangocentral.com/create-a-hello-world-django-application/) and [Virtual Env](https://djangocentral.com/how-to-a-create-virtual-environment-for-python/)
+Inspired by [Django central](https://djangocentral.com/create-a-hello-world-django-application/)
+and [Virtual Env](https://djangocentral.com/how-to-a-create-virtual-environment-for-python/)
 
 ## How to create a migration
 
@@ -85,3 +86,8 @@ After having installed gunicorn
 
 It's possible to run the same webserver through gunicorn via
 `gunicorn hello_world_django.wsgi`
+
+## Use virtual environment as python interpreter for PyCharm
+
+Settings > Python Interpreter > add interpreter and select `myenv/bin/python`
+inspired by https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#python_create_virtual_env
