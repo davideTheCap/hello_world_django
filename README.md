@@ -90,4 +90,6 @@ It's possible to run the same webserver through gunicorn via
 ## Use virtual environment as python interpreter for PyCharm
 
 Settings > Python Interpreter > add interpreter and select `myenv/bin/python`
+It's also likely needed to add the folders `hello_world` and `my_app` as SourcesRoot by right-clicking on them in the
+Project window > Mark directory as > sources root
 inspired by https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#python_create_virtual_env
