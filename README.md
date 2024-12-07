@@ -93,3 +93,9 @@ Settings > Python Interpreter > add interpreter and select `myenv/bin/python`
 It's also likely needed to add the folders `hello_world` and `my_app` as SourcesRoot by right-clicking on them in the
 Project window > Mark directory as > sources root
 inspired by https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#python_create_virtual_env
+
+## Usual errors
+
+`ModuleNotFoundError: No module named 'models'`
+
+Might happen when you create a subfolder without having inside the empty file named `__init__.py`

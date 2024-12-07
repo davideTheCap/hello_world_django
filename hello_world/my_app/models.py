@@ -1,5 +1,5 @@
-from my_app.person import *
-from my_app.person_repository import PersonRepository
+from models.person import *
+from repositories.person_repository import PersonRepository
 
 person_repo = PersonRepository()
 person_repo.add(Person("John", 1))

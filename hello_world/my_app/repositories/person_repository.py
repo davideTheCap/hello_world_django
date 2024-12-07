@@ -1,5 +1,5 @@
-from my_app.generic_repository import *
-from my_app.person import *
+from models.person import *
+from repositories.generic_repository import *
 
 
 class PersonRepository(GenericRepository[Person]):
