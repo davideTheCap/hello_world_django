@@ -1,6 +1,6 @@
-from my_app.repositories import PersonRepository
-from .db import db
-from .person import Person
+from models.db import db
+from models.person import Person
+from repositories import PersonRepository
 
 db.connect()
 db.create_tables([Person])
