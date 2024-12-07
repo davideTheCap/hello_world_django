@@ -3,5 +3,5 @@ from my_app.person import *
 
 
 class PersonRepository(GenericRepository[Person]):
-    def __init__(self: [Person]):
+    def __init__(self):
         super().__init__()
