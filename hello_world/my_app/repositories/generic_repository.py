@@ -1,20 +1,11 @@
-# TODO: idea con valerio
-# abstract class base_interface(): <T> {
-#     find_by_id(uuid: string): <T>
-#     delete_by_id(uuid: string): void
-#     create_or_update(<T> obj): <T>
-#     update(<T>): <T> --> maybe provided by peewe (find + create_or_update()?)
-# }
-
 # Define type variables
-from typing import *
+from typing import Generic, List, Optional
 
-T = TypeVar('T')
+from my_app.models.T import T
 
 
 class GenericRepository(Generic[T]):
     def __init__(self):
-        print("generic repo")
         self.items: List[T] = []
 
     def add(self, item: T) -> None:

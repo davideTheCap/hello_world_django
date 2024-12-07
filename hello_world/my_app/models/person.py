@@ -1,5 +1,6 @@
 from peewee import CharField, IntegerField
 
+from my_app.repositories.person_repository import PersonRepository
 from .base_models import BaseModel
 
 
@@ -15,14 +16,9 @@ class Person(BaseModel):
         print(self.name, self.id)
 
 
-p = Person(name="zio", id=3)
-p.display()
-
-# person_repo = PersonRepository()
-# person_repo.add(Person("John", 1))
-# person_repo.add(Person("Bob", 2))
-# print("model")
-#
-# employees = person_repo.all()
-# for employee in employees:
-#     print(employee.name)
+person_repo = PersonRepository()
+person_repo.add(Person("John", 1))
+person_repo.add(Person("Bob", 2))
+employees = person_repo.all()
+for employee in employees:
+    print(employee.name)

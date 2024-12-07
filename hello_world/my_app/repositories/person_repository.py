@@ -1,8 +1,7 @@
-from models.person import *
-from repositories.generic_repository import *
+from my_app.models.T import T
+from .generic_repository import GenericRepository
 
 
-class PersonRepository(GenericRepository[Person]):
+class PersonRepository(GenericRepository[T]):
     def __init__(self):
-        print("person repo")
         super().__init__()
